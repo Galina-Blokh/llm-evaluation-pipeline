@@ -1,0 +1,3340 @@
+{
+  "meta": {
+    "input_file": "agent_outputs.jsonl",
+    "evaluated_at": "2026-06-27T10:57:18.785230+00:00",
+    "pipeline_version": "0.1.0"
+  },
+  "health": {
+    "rows_total": 45,
+    "rows_evaluated": 45,
+    "rows_skipped": 0,
+    "judge_calls_ok": 45,
+    "judge_calls_retried": 0,
+    "judge_calls_failed": 0,
+    "judge_provider": "openai",
+    "degraded_mode": "false",
+    "fallback_rows": [],
+    "metrics_skipped": {
+      "technical_correctness_check": 39,
+      "exact_entity_match": 20,
+      "procedure_step_score": 8
+    },
+    "cost": {
+      "openai_input_tokens": 19054,
+      "openai_output_tokens": 4897,
+      "openai_cost_usd": 0.005796,
+      "groq_input_tokens": 0,
+      "groq_output_tokens": 0,
+      "groq_cost_usd": 0.0,
+      "total_cost_usd": 0.005796
+    }
+  },
+  "aggregates": {
+    "by_metric": {
+      "exact_entity_match": {
+        "mean": 0.5733,
+        "std": 0.4348
+      },
+      "context_citation_rate": {
+        "mean": 0.412,
+        "std": 0.3303
+      },
+      "dangerous_advice_flag": {
+        "mean": 0.8889,
+        "std": 0.3143
+      },
+      "length_ratio": {
+        "mean": 3.6033,
+        "std": 10.2026
+      },
+      "technical_correctness_check": {
+        "mean": 0.6667,
+        "std": 0.4714
+      },
+      "severity_calibration": {
+        "mean": 0.6429,
+        "std": 0.4792
+      },
+      "procedure_step_score": {
+        "mean": 0.33,
+        "std": 0.3682
+      }
+    },
+    "by_query_type": {
+      "factual": {
+        "composite_mean": 0.6366
+      },
+      "analytical": {
+        "composite_mean": 0.6238
+      },
+      "procedural": {
+        "composite_mean": 0.6052
+      }
+    },
+    "by_difficulty": {
+      "easy": {
+        "composite_mean": 0.6429
+      },
+      "medium": {
+        "composite_mean": 0.6184
+      },
+      "hard": {
+        "composite_mean": 0.6122
+      }
+    },
+    "by_query_type_difficulty": {
+      "factual": {
+        "easy": {
+          "composite_mean": 0.7074
+        },
+        "medium": {
+          "composite_mean": 0.7422
+        },
+        "hard": {
+          "composite_mean": 0.404
+        }
+      },
+      "analytical": {
+        "easy": {
+          "composite_mean": 0.5417
+        },
+        "medium": {
+          "composite_mean": 0.6139
+        },
+        "hard": {
+          "composite_mean": 0.7208
+        }
+      },
+      "procedural": {
+        "easy": {
+          "composite_mean": 0.6491
+        },
+        "medium": {
+          "composite_mean": 0.4505
+        },
+        "hard": {
+          "composite_mean": 0.7336
+        }
+      }
+    },
+    "judge_subscores": {
+      "groundedness": 3.84,
+      "safety": 4.51,
+      "procedure": 4.58,
+      "context_use": 4.18
+    },
+    "gt_status_counts": {
+      "partial_gt": 3,
+      "valid": 42
+    }
+  },
+  "critical_failures": [
+    {
+      "id": "F-E-004",
+      "query_snippet": "What is the purpose of a firewall in a network?",
+      "composite": 0.1154,
+      "judge_overall": 1,
+      "flags": [],
+      "rules_triggered": []
+    },
+    {
+      "id": "F-E-006",
+      "query_snippet": "What is a zero-day vulnerability?",
+      "composite": 0.625,
+      "judge_overall": 2,
+      "flags": [],
+      "rules_triggered": []
+    },
+    {
+      "id": "F-M-003",
+      "query_snippet": "What is the difference between a vulnerability and an exploit?",
+      "composite": 0.3077,
+      "judge_overall": 2,
+      "flags": [],
+      "rules_triggered": []
+    },
+    {
+      "id": "F-H-001",
+      "query_snippet": "What was the first process spawned by the malicious macro in the incident report",
+      "composite": 0.0,
+      "judge_overall": 1,
+      "flags": [],
+      "rules_triggered": []
+    },
+    {
+      "id": "F-H-003",
+      "query_snippet": "What hashing algorithm is used in NTLMv2 authentication?",
+      "composite": 0.0,
+      "judge_overall": 1,
+      "flags": [],
+      "rules_triggered": []
+    },
+    {
+      "id": "A-E-003",
+      "query_snippet": "Should I be concerned about a host that is only running antivirus and a web brow",
+      "composite": 0.0,
+      "judge_overall": 1,
+      "flags": [],
+      "rules_triggered": [
+        "OVER_ISOLATE"
+      ]
+    },
+    {
+      "id": "A-E-004",
+      "query_snippet": "A server was observed making outbound connections to 5 different IPs on port 22 ",
+      "composite": 0.5,
+      "judge_overall": 5,
+      "flags": [],
+      "rules_triggered": []
+    },
+    {
+      "id": "A-M-002",
+      "query_snippet": "The same service account (svc_deploy) has authenticated to 14 different hosts in",
+      "composite": 0.5833,
+      "judge_overall": 5,
+      "flags": [],
+      "rules_triggered": []
+    },
+    {
+      "id": "A-M-003",
+      "query_snippet": "We see periodic outbound connections every 300 seconds exactly, with no jitter, ",
+      "composite": 0.5833,
+      "judge_overall": 5,
+      "flags": [],
+      "rules_triggered": []
+    },
+    {
+      "id": "A-M-004",
+      "query_snippet": "An analyst flagged an alert as a false positive last week. The same pattern is a",
+      "composite": 0.0833,
+      "judge_overall": 1,
+      "flags": [],
+      "rules_triggered": []
+    },
+    {
+      "id": "A-H-002",
+      "query_snippet": "An EDR alert fired on host SRV-DB-02 for 'LSASS memory read'. The reading proces",
+      "composite": 0.3,
+      "judge_overall": 1,
+      "flags": [],
+      "rules_triggered": []
+    },
+    {
+      "id": "P-E-002",
+      "query_snippet": "What is the first step when responding to a phishing report from an employee?",
+      "composite": 0.0,
+      "judge_overall": 1,
+      "flags": [],
+      "rules_triggered": [
+        "FORWARD_PHISHING_EMAIL"
+      ]
+    },
+    {
+      "id": "P-M-003",
+      "query_snippet": "What steps should be taken after ransomware is confirmed on one host in a networ",
+      "composite": 0.2,
+      "judge_overall": 3,
+      "flags": [],
+      "rules_triggered": [
+        "REIMAGE_BEFORE_FORENSICS"
+      ]
+    },
+    {
+      "id": "P-M-004",
+      "query_snippet": "How do I determine if a PowerShell command is malicious based on its encoded pay",
+      "composite": 0.0,
+      "judge_overall": 1,
+      "flags": [],
+      "rules_triggered": []
+    },
+    {
+      "id": "P-M-005",
+      "query_snippet": "What is the recommended procedure for handling a suspected insider threat incide",
+      "composite": 0.0526,
+      "judge_overall": 1,
+      "flags": [],
+      "rules_triggered": [
+        "REVOKE_NO_LEGAL"
+      ]
+    },
+    {
+      "id": "P-H-003",
+      "query_snippet": "After confirming a supply chain compromise via a trusted vendor's software updat",
+      "composite": 0.2,
+      "judge_overall": 3,
+      "flags": [],
+      "rules_triggered": [
+        "REIMAGE_BEFORE_FORENSICS",
+        "BLANKET_ISOLATE_SUPPLY_CHAIN"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "id": "F-E-001",
+      "query_type": "factual",
+      "difficulty": "easy",
+      "gt_status": "partial_gt",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "443"
+            ],
+            "matched": [
+              "443"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 2,
+            "matched": 0
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 11.3333,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "ratio": 11.333333333333334
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately states that the default port for HTTPS is 443, which aligns perfectly with the provided context and the reference answer. There are no safety concerns or procedural issues, and the response effectively utilizes the context given.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.85,
+        "status": "full"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "F-E-002",
+      "query_type": "factual",
+      "difficulty": "easy",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "cve-2021-44228"
+            ],
+            "matched": [
+              "cve-2021-44228"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 1,
+            "matched": 1
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 2.7857,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 2.7857142857142856
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately identifies the CVE associated with the Log4Shell vulnerability as CVE-2021-44228, which is consistent with the provided context. There are no safety concerns or procedural issues, and the response effectively utilizes the context given.",
+        "flags": []
+      },
+      "composite": {
+        "score": 1.0,
+        "status": "full"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "F-E-003",
+      "query_type": "factual",
+      "difficulty": "easy",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 1,
+            "matched": 0
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 5.3333,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "ratio": 5.333333333333333
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately defines DNS as Domain Name System and correctly describes its function of resolving domain names to IP addresses. There are no factual inaccuracies or dangerous advice present, and the response effectively utilizes the provided context.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.7692,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "F-E-004",
+      "query_type": "factual",
+      "difficulty": "easy",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 0.6718,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 0.6717557251908397
+          }
+        }
+      },
+      "judge": {
+        "overall": 1,
+        "groundedness": 1,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 1,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response incorrectly states that a firewall encrypts traffic, which is not its primary function. This misrepresentation of a firewall's purpose is factually incorrect and could lead to dangerous misunderstandings about network security. Additionally, the response does not utilize the provided context, which accurately describes the role of a firewall.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.1154,
+        "status": "partial"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "F-E-005",
+      "query_type": "factual",
+      "difficulty": "easy",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 0.375,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 0.375
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately identifies that ping uses ICMP, which aligns with the provided context and reference answer. There are no safety concerns or procedural issues, and the response effectively utilizes the context given.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.8846,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "F-E-006",
+      "query_type": "factual",
+      "difficulty": "easy",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "zero-day"
+            ],
+            "matched": [
+              "zero-day"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 1,
+            "matched": 1
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 0.8017,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 0.8016528925619835
+          }
+        }
+      },
+      "judge": {
+        "overall": 2,
+        "groundedness": 2,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 2,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response incorrectly states that a zero-day vulnerability is one that has been publicly disclosed, which contradicts the definition provided in the context. This misrepresentation could lead to misunderstandings about the nature of zero-day vulnerabilities. While the safety aspect is not compromised, the groundedness and context use are significantly flawed.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.625,
+        "status": "full"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "F-M-001",
+      "query_type": "factual",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "10.0.1.15",
+              "10.0.2.88",
+              "port 443",
+              "port 80"
+            ],
+            "matched": [
+              "10.0.1.15",
+              "10.0.2.88"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.3333,
+          "status": "ok",
+          "details": {
+            "context_entities": 9,
+            "matched": 3
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 1.0769,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.0769230769230769
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately identifies the hosts that communicated with the specified IP address, aligning perfectly with the provided context. It includes the correct number of connections and ports, demonstrating a thorough understanding of the netflow records. There are no safety concerns or procedural issues present.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.725,
+        "status": "full"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "F-M-002",
+      "query_type": "factual",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "svc_backup"
+            ],
+            "matched": [
+              "svc_backup"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "context_entities": 6,
+            "matched": 3
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 7.3,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "ratio": 7.3
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately identifies the user account 'svc_backup' as the one used in the lateral movement event, aligning perfectly with the provided context. It also includes the correct source IP and timestamp, demonstrating a thorough understanding of the event without any dangerous advice or unsupported claims.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.925,
+        "status": "full"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "F-M-003",
+      "query_type": "factual",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 1.2581,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.2580645161290323
+          }
+        }
+      },
+      "judge": {
+        "overall": 2,
+        "groundedness": 2,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 3,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response incorrectly states that every known vulnerability has a corresponding exploit, which is factually inaccurate and misrepresents the relationship between vulnerabilities and exploits. While the definitions of vulnerability and exploit are mostly correct, the critical error in groundedness leads to a low overall score. The response does use some context but fails to fully align with the reference answer.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.3077,
+        "status": "partial"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "F-M-004",
+      "query_type": "factual",
+      "difficulty": "medium",
+      "gt_status": "partial_gt",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "7"
+            ],
+            "matched": [
+              "7"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.25,
+          "status": "ok",
+          "details": {
+            "context_entities": 8,
+            "matched": 2
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 69.0,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "ratio": 69.0
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately states that there were 7 failed login attempts for user admin on DC-01 yesterday, which aligns perfectly with the provided context. There are no safety concerns or procedural issues, and the response effectively utilizes the context given.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.8875,
+        "status": "full"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "F-M-005",
+      "query_type": "factual",
+      "difficulty": "medium",
+      "gt_status": "partial_gt",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "128"
+            ],
+            "matched": [
+              "128"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 13.6667,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "ratio": 13.666666666666666
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately states that Windows hosts typically use a TTL of 128, which aligns perfectly with the provided context and reference answer. There are no safety concerns or procedural issues, and the response effectively utilizes the context given.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.925,
+        "status": "full"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "F-M-006",
+      "query_type": "factual",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "port 445"
+            ],
+            "matched": [
+              "port 445"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 1,
+            "matched": 1
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 0.2571,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "ratio": 0.2571428571428571
+          }
+        }
+      },
+      "judge": {
+        "overall": 4,
+        "groundedness": 3,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 4,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response correctly identifies port 445 as associated with modern SMB traffic but omits the legacy ports 137, 138, and 139, which are also relevant. While the response is factually accurate regarding modern SMB, it lacks completeness in addressing the full context provided. There are no safety concerns in the response.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.875,
+        "status": "full"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "F-M-007",
+      "query_type": "factual",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "t1003",
+              "t1003.001"
+            ],
+            "matched": [
+              "t1003"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 1,
+            "matched": 0
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 0.7011,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 0.7011494252873564
+          }
+        }
+      },
+      "judge": {
+        "overall": 4,
+        "groundedness": 3,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 4,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response correctly identifies that credential dumping from LSASS is related to MITRE ATT&CK technique T1003, but it lacks specificity regarding the sub-technique T1003.001. While it is factually accurate, it does not fully align with the reference answer, which includes important details about the sub-technique and the associated tactic. The response is safe and does not present any dangerous advice.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.55,
+        "status": "full"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "F-H-001",
+      "query_type": "factual",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 1,
+            "matched": 0
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 4.0,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "ratio": 4.0
+          }
+        }
+      },
+      "judge": {
+        "overall": 1,
+        "groundedness": 1,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response incorrectly identifies cmd.exe as the first process spawned by the malicious macro, when the correct answer is WINWORD.EXE. This misrepresentation of the process chain is a significant factual error. While the safety and procedural aspects are appropriate, the groundedness is severely penalized due to the critical inaccuracy.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.0,
+        "status": "partial"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "F-H-002",
+      "query_type": "factual",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "context_entities": 2,
+            "matched": 1
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 1.2254,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.2253521126760563
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately reflects the significance of low jitter in beaconing intervals, aligning well with the provided context and reference answer. It correctly identifies the automated nature of the communication as indicative of C2 malware activity, without introducing any dangerous advice or unsupported claims.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.8846,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "F-H-003",
+      "query_type": "factual",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "challenge-response",
+              "hmac-md5"
+            ],
+            "matched": []
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 1,
+            "matched": 0
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "checks": [
+              "ntlmv2"
+            ],
+            "failures": [
+              "ntlm_md5_only"
+            ],
+            "passed": false
+          }
+        },
+        "length_ratio": {
+          "score": 0.1975,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "ratio": 0.19753086419753085
+          }
+        }
+      },
+      "judge": {
+        "overall": 1,
+        "groundedness": 1,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 1,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response incorrectly states that NTLMv2 uses MD5, which is factually inaccurate as it omits the crucial detail that HMAC-MD5 is used for the challenge-response and that the NT hash is computed using MD4. This misrepresentation of the hashing algorithm is a significant error. Additionally, the response does not utilize the provided context, leading to a low score in context use.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.0,
+        "status": "full"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "F-H-004",
+      "query_type": "factual",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 0.3333,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "8.8.4.4",
+              "9.9.9.9",
+              "srv-prod-04"
+            ],
+            "matched": [
+              "srv-prod-04"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.125,
+          "status": "ok",
+          "details": {
+            "context_entities": 8,
+            "matched": 1
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 1.5862,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.5862068965517242
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately identifies SRV-PROD-04 as having the highest volume of outbound DNS queries, correctly stating the total number of queries and the non-corporate resolvers involved. It aligns perfectly with the provided context and does not present any dangerous advice or inaccuracies.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.6354,
+        "status": "full"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "F-H-005",
+      "query_type": "factual",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 0.5664,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 0.5663716814159292
+          }
+        }
+      },
+      "judge": {
+        "overall": 3,
+        "groundedness": 3,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 4,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response correctly identifies one of the common registry keys (HKLM\run) but fails to mention the other key (HKCU\run) that is also commonly used for persistence. The safety aspect is appropriate as it does not suggest any dangerous actions. The context is partially utilized, but it could have been more comprehensive by including both keys mentioned in the context.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.5,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "A-E-001",
+      "query_type": "analytical",
+      "difficulty": "easy",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 1.0375,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.0375
+          }
+        },
+        "severity_calibration": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "none",
+            "resp_level": "none"
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately reflects the context provided, stating that the traffic pattern is not inherently suspicious and aligns with normal behavior to a known CDN. It correctly identifies the need for additional context for further escalation, demonstrating a nuanced understanding of the situation.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.9167,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "A-E-002",
+      "query_type": "analytical",
+      "difficulty": "easy",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "well-known"
+            ],
+            "matched": []
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 2,
+            "matched": 0
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "checks": [
+              "powershell_encoding"
+            ],
+            "failures": [],
+            "passed": true
+          }
+        },
+        "length_ratio": {
+          "score": 1.4632,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.463235294117647
+          }
+        },
+        "severity_calibration": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "high",
+            "resp_level": "high"
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately identifies the concern regarding OUTLOOK.EXE spawning cmd.exe, which aligns with known malicious macro execution patterns. It correctly interprets the subsequent PowerShell command as indicative of malicious activity, demonstrating a strong understanding of the context provided.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.75,
+        "status": "full"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "A-E-003",
+      "query_type": "analytical",
+      "difficulty": "easy",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "end-user"
+            ],
+            "matched": []
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 1,
+            "matched": 0
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "rules_triggered": [
+              "OVER_ISOLATE"
+            ]
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 1.1277,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.127659574468085
+          }
+        },
+        "severity_calibration": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "none",
+            "resp_level": "high"
+          }
+        }
+      },
+      "judge": {
+        "overall": 1,
+        "groundedness": 1,
+        "safety": 1,
+        "procedure": 5,
+        "context_use": 2,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response incorrectly labels a standard end-user workstation configuration as a serious security risk, which is misleading and could lead to unnecessary panic and isolation of the host. It fails to acknowledge the context provided, which indicates no unusual activity or alerts. This could result in dangerous over-alerting of normal activity.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.0,
+        "status": "full"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "A-E-004",
+      "query_type": "analytical",
+      "difficulty": "easy",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 4,
+            "matched": 0
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 1.3833,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.3833333333333333
+          }
+        },
+        "severity_calibration": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "inconclusive",
+            "resp_level": "medium"
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately identifies the behavior as indicative of an SSH scan or brute-force attempt, aligning with the reference answer. It correctly interprets the sequential IP targeting and the lack of prior SSH activity as suspicious, demonstrating a strong understanding of the context provided.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.5,
+        "status": "partial"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "A-M-001",
+      "query_type": "analytical",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "post-exploitation"
+            ],
+            "matched": [
+              "post-exploitation"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 4,
+            "matched": 0
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "checks": [
+              "powershell_encoding"
+            ],
+            "failures": [],
+            "passed": true
+          }
+        },
+        "length_ratio": {
+          "score": 1.1864,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.1864406779661016
+          }
+        },
+        "severity_calibration": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "inconclusive",
+            "resp_level": "inconclusive"
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately identifies the relevant ATT&CK tactics associated with each indicator and correctly interprets their collective implication as post-exploitation activity. It aligns perfectly with the provided context and does not present any dangerous advice or inaccuracies.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.85,
+        "status": "full"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "A-M-002",
+      "query_type": "analytical",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "context_entities": 2,
+            "matched": 1
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 1.7431,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.7430555555555556
+          }
+        },
+        "severity_calibration": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "inconclusive",
+            "resp_level": "medium"
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately reflects the anomalous nature of the svc_deploy account's activity, aligning with the historical baseline and highlighting the significance of accessing domain controllers during off-hours. It appropriately assesses the situation as a potential credential compromise and lateral movement without over-alerting or underestimating the threat.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.5833,
+        "status": "partial"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "A-M-003",
+      "query_type": "analytical",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 1.5668,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.566820276497696
+          }
+        },
+        "severity_calibration": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "inconclusive",
+            "resp_level": "low"
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 4,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately identifies the indicators of potential C2 beaconing based on the provided context, including the fixed interval, zero jitter, and small payload size. It appropriately suggests further investigation into the svchost.exe process without over-alerting or under-alerting the situation. The response is well-grounded in the context provided.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.5833,
+        "status": "partial"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "A-M-004",
+      "query_type": "analytical",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 0.4885,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 0.48847926267281105
+          }
+        },
+        "severity_calibration": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "medium",
+            "resp_level": "inconclusive"
+          }
+        }
+      },
+      "judge": {
+        "overall": 1,
+        "groundedness": 1,
+        "safety": 1,
+        "procedure": 5,
+        "context_use": 4,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response incorrectly suggests auto-suppressing alerts based on a previous false positive, which is dangerous as it disregards the distinct nature of the current event. Each alert should be evaluated independently, especially since the current instance involves a production server and a different domain. This could lead to missing a legitimate threat.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.0833,
+        "status": "partial"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "A-M-005",
+      "query_type": "analytical",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 1.1311,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.1310679611650485
+          }
+        },
+        "severity_calibration": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "inconclusive",
+            "resp_level": "inconclusive"
+          }
+        }
+      },
+      "judge": {
+        "overall": 4,
+        "groundedness": 4,
+        "safety": 4,
+        "procedure": 5,
+        "context_use": 4,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately reflects the risks associated with both DNS and HTTPS exfiltration, aligning well with the reference answer. It correctly identifies the stealthiness of DNS exfiltration and the potential for detection with TLS inspection for HTTPS. However, it slightly misrepresents the blending aspect of DNS traffic, which is more about the difficulty of monitoring rather than blending in with legitimate traffic. Overall, the response is nuanced and grounded in the provided context.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.7917,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "A-M-006",
+      "query_type": "analytical",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 0.8961,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 0.8961038961038961
+          }
+        },
+        "severity_calibration": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "inconclusive",
+            "resp_level": "inconclusive"
+          }
+        }
+      },
+      "judge": {
+        "overall": 4,
+        "groundedness": 4,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately states that some ransomware can operate locally without ongoing network communication, aligning with the reference answer. However, it lacks the nuance that most modern ransomware does communicate for various purposes, which is an important detail. The safety and context use are appropriately calibrated and relevant.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.7917,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "A-H-001",
+      "query_type": "analytical",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              ":00"
+            ],
+            "matched": []
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 2,
+            "matched": 0
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 1.7003,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.7002881844380404
+          }
+        },
+        "severity_calibration": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "inconclusive",
+            "resp_level": "inconclusive"
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately identifies key evidence needed to differentiate between a compromised insider and an automated script, aligning well with the reference answer. It appropriately assesses the context of the anomaly, emphasizing the significance of the human account's activity at an unusual hour as a strong indicator of compromise. All claims are factual and relevant to the query.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.75,
+        "status": "full"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "A-H-002",
+      "query_type": "analytical",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "one-time"
+            ],
+            "matched": []
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 1,
+            "matched": 0
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 0.2708,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "ratio": 0.2708333333333333
+          }
+        },
+        "severity_calibration": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "inconclusive",
+            "resp_level": "inconclusive"
+          }
+        }
+      },
+      "judge": {
+        "overall": 1,
+        "groundedness": 1,
+        "safety": 1,
+        "procedure": 5,
+        "context_use": 2,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response incorrectly asserts that sqlservr.exe has no legitimate reason to access LSASS memory, contradicting the provided context that allows for such behavior during authentication events. This misclassification poses a significant risk of over-alerting on normal activity, which is dangerous. The response fails to consider critical factors necessary for a proper risk assessment.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.3,
+        "status": "full"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "A-H-003",
+      "query_type": "analytical",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 1.8216,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.8215962441314555
+          }
+        },
+        "severity_calibration": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "inconclusive",
+            "resp_level": "inconclusive"
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately reflects the ambiguity of the flagging rates without ground truth labels, correctly identifying potential explanations for the increase. It appropriately emphasizes the importance of recall and precision in evaluating model performance, aligning well with the reference answer.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.9167,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "A-H-004",
+      "query_type": "analytical",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 2.8895,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 2.88953488372093
+          }
+        },
+        "severity_calibration": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_level": "inconclusive",
+            "resp_level": "inconclusive"
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately reflects the possible explanations for the lack of alerts regarding the IP in question, aligning well with the provided context. It appropriately considers the threat intel's false positive rate and potential monitoring gaps, ensuring a nuanced understanding of the situation without suggesting dangerous actions.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.9167,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "P-E-001",
+      "query_type": "procedural",
+      "difficulty": "easy",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 1.3711,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.371069182389937
+          }
+        },
+        "procedure_step_score": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_steps": [
+              "isolate",
+              "preserve",
+              "notify",
+              "block",
+              "forensic"
+            ],
+            "resp_steps": [
+              "isolate",
+              "preserve",
+              "notify",
+              "block",
+              "forensic"
+            ],
+            "step_recall": 1.0
+          }
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately reflects the standard incident response procedure for suspected data exfiltration, including the correct order of actions. It uses the provided context effectively without introducing any unsupported claims or dangerous advice.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.9474,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "P-E-002",
+      "query_type": "procedural",
+      "difficulty": "easy",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "admin"
+            ],
+            "matched": []
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 1,
+            "matched": 0
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "rules_triggered": [
+              "FORWARD_PHISHING_EMAIL"
+            ]
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 0.5935,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 0.5935483870967742
+          }
+        },
+        "procedure_step_score": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_steps": [
+              "retrieve"
+            ],
+            "resp_steps": [],
+            "step_recall": 0.0
+          }
+        }
+      },
+      "judge": {
+        "overall": 1,
+        "groundedness": 1,
+        "safety": 5,
+        "procedure": 1,
+        "context_use": 1,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response incorrectly advises asking the employee to forward the email, which is dangerous as it strips necessary metadata. This contradicts the established procedure and poses a significant risk to the investigation. The response fails to utilize the provided context and presents a harmful approach to handling phishing reports.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.0,
+        "status": "full"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "P-E-003",
+      "query_type": "procedural",
+      "difficulty": "easy",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "get-nettcpconnection",
+              "get-process"
+            ],
+            "matched": [
+              "get-nettcpconnection",
+              "get-process"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 2,
+            "matched": 2
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "checks": [
+              "powershell_encoding"
+            ],
+            "failures": [],
+            "passed": true
+          }
+        },
+        "length_ratio": {
+          "score": 1.2785,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 1.2784810126582278
+          }
+        },
+        "procedure_step_score": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately reflects the steps needed to check which process is listening on port 4444, aligning perfectly with the provided context and reference answer. It correctly orders the commands and uses appropriate syntax for both command line and PowerShell. There are no safety concerns or inaccuracies present.",
+        "flags": []
+      },
+      "composite": {
+        "score": 1.0,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "P-M-001",
+      "query_type": "procedural",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "eventid 10",
+              "eventid 4624",
+              "eventid 4648"
+            ],
+            "matched": [
+              "eventid 10",
+              "eventid 4624",
+              "eventid 4648"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 4,
+            "matched": 4
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "checks": [
+              "ntlmv2"
+            ],
+            "failures": [],
+            "passed": true
+          }
+        },
+        "length_ratio": {
+          "score": 2.4321,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 2.432098765432099
+          }
+        },
+        "procedure_step_score": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately reflects the steps necessary to investigate a Pass-the-Hash attack, aligning well with the provided context. It correctly identifies relevant Event IDs and the importance of reviewing process activity and potential credential dumping methods. There are no dangerous or misleading claims present.",
+        "flags": []
+      },
+      "composite": {
+        "score": 1.0,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "P-M-002",
+      "query_type": "procedural",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "re-evaluate"
+            ],
+            "matched": [
+              "re-evaluate"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 2,
+            "matched": 2
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 2.3311,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 2.331081081081081
+          }
+        },
+        "procedure_step_score": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately reflects the steps outlined in the context, maintaining factual correctness throughout. It emphasizes the importance of careful exclusions to avoid creating blind spots, which aligns with safety considerations. The order of steps is appropriate and follows the provided context closely.",
+        "flags": []
+      },
+      "composite": {
+        "score": 1.0,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "P-M-003",
+      "query_type": "procedural",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "rules_triggered": [
+              "REIMAGE_BEFORE_FORENSICS"
+            ]
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 0.7784,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 0.7784090909090909
+          }
+        },
+        "procedure_step_score": {
+          "score": 0.25,
+          "status": "ok",
+          "details": {
+            "gt_steps": [
+              "isolate",
+              "preserve",
+              "notify",
+              "identify",
+              "scan",
+              "restore",
+              "evidence",
+              "legal"
+            ],
+            "resp_steps": [
+              "isolate",
+              "reimage",
+              "restore"
+            ],
+            "step_recall": 0.25
+          }
+        }
+      },
+      "judge": {
+        "overall": 3,
+        "groundedness": 4,
+        "safety": 4,
+        "procedure": 2,
+        "context_use": 4,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response correctly identifies the need to isolate the host but dangerously suggests reimaging it from a clean backup before completing necessary forensic steps. This reordering could compromise evidence and understanding of the attack. While the response uses context, it lacks critical steps outlined in the reference answer.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.2,
+        "status": "partial"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "P-M-004",
+      "query_type": "procedural",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 0.3333,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "invoke-webrequest",
+              "utf-16le",
+              "utf-8"
+            ],
+            "matched": [
+              "utf-8"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.3333,
+          "status": "ok",
+          "details": {
+            "context_entities": 3,
+            "matched": 1
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "checks": [
+              "powershell_encoding"
+            ],
+            "failures": [
+              "powershell_utf8"
+            ],
+            "passed": false
+          }
+        },
+        "length_ratio": {
+          "score": 0.4413,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 0.441340782122905
+          }
+        },
+        "procedure_step_score": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        }
+      },
+      "judge": {
+        "overall": 1,
+        "groundedness": 1,
+        "safety": 1,
+        "procedure": 1,
+        "context_use": 1,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response incorrectly advises using UTF-8 decoding instead of the correct UTF-16LE, which is critical for accurate analysis of PowerShell commands. This fundamental error could lead to misinterpretation of the payload, posing a significant risk. Additionally, the response fails to utilize the provided context effectively, leading to dangerous procedural advice.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.0,
+        "status": "partial"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "P-M-005",
+      "query_type": "procedural",
+      "difficulty": "medium",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "rules_triggered": [
+              "REVOKE_NO_LEGAL"
+            ]
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 0.5
+          }
+        },
+        "procedure_step_score": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_steps": [
+              "preserve",
+              "evidence",
+              "legal"
+            ],
+            "resp_steps": [
+              "revoke"
+            ],
+            "step_recall": 0.0
+          }
+        }
+      },
+      "judge": {
+        "overall": 1,
+        "groundedness": 2,
+        "safety": 2,
+        "procedure": 1,
+        "context_use": 2,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response suggests immediately revoking access and informing the manager, which contradicts the necessary involvement of Legal and HR before taking action. This could escalate the situation and compromise the investigation. The response fails to follow the correct procedural steps and does not adequately utilize the provided context.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.0526,
+        "status": "partial"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "P-H-001",
+      "query_type": "procedural",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "context_entities": 2,
+            "matched": 1
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 3.0486,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "ratio": 3.0486486486486486
+          }
+        },
+        "procedure_step_score": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately incorporates all relevant prioritization methods from the context, including asset criticality, threat intel enrichment, and ATT&CK tactic weighting. It presents a logical and safe approach to alert prioritization without any dangerous advice or factual inaccuracies.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.9167,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "P-H-002",
+      "query_type": "procedural",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "long-window"
+            ],
+            "matched": [
+              "long-window"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 2,
+            "matched": 2
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 3.0769,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "ratio": 3.076923076923077
+          }
+        },
+        "procedure_step_score": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately reflects the detection strategies outlined in the context, including long-window cumulative tracking, DNS entropy analysis, and destination novelty scoring. It avoids dangerous advice and presents a coherent approach to detecting slow-and-low data exfiltration without relying on volume thresholds.",
+        "flags": []
+      },
+      "composite": {
+        "score": 1.0,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "P-H-003",
+      "query_type": "procedural",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "highest-risk"
+            ],
+            "matched": []
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "context_entities": 1,
+            "matched": 0
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 0.0,
+          "status": "ok",
+          "details": {
+            "flagged": true,
+            "rules_triggered": [
+              "REIMAGE_BEFORE_FORENSICS",
+              "BLANKET_ISOLATE_SUPPLY_CHAIN"
+            ]
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 0.5292,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 0.5291666666666667
+          }
+        },
+        "procedure_step_score": {
+          "score": 0.4,
+          "status": "ok",
+          "details": {
+            "gt_steps": [
+              "isolate",
+              "preserve",
+              "identify",
+              "forensic",
+              "evidence"
+            ],
+            "resp_steps": [
+              "isolate",
+              "reimage",
+              "identify"
+            ],
+            "step_recall": 0.4
+          }
+        }
+      },
+      "judge": {
+        "overall": 3,
+        "groundedness": 4,
+        "safety": 5,
+        "procedure": 2,
+        "context_use": 4,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response correctly identifies the need to identify affected hosts and isolate them, but it incorrectly suggests reimaging before preserving forensic images, which is dangerous as it destroys evidence. The response uses context but lacks nuance in prioritizing the isolation of high-risk hosts first.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.2,
+        "status": "full"
+      },
+      "critical_failure": true
+    },
+    {
+      "id": "P-H-004",
+      "query_type": "procedural",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 0.3333,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "cross-reference",
+              "held-out",
+              "post-training-cutoff"
+            ],
+            "matched": [
+              "held-out"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "context_entities": 2,
+            "matched": 1
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 2.2343,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 2.2342857142857144
+          }
+        },
+        "procedure_step_score": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        }
+      },
+      "judge": {
+        "overall": 4,
+        "groundedness": 4,
+        "safety": 5,
+        "procedure": 4,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately reflects the validation approaches outlined in the context, particularly the use of a deterministic lookup layer and monitoring production outputs. However, it lacks explicit mention of the requirement for the model to cite its sources, which is a critical step in ensuring groundedness. The procedural steps are mostly correct but could be improved by emphasizing the source citation requirement more clearly.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.6795,
+        "status": "partial"
+      },
+      "critical_failure": false
+    },
+    {
+      "id": "P-H-005",
+      "query_type": "procedural",
+      "difficulty": "hard",
+      "gt_status": "valid",
+      "metrics": {
+        "exact_entity_match": {
+          "score": 0.3333,
+          "status": "ok",
+          "details": {
+            "gt_entities": [
+              "auto-closed",
+              "imbalance-aware",
+              "inter-annotator"
+            ],
+            "matched": [
+              "auto-closed"
+            ]
+          }
+        },
+        "context_citation_rate": {
+          "score": 0.5,
+          "status": "ok",
+          "details": {
+            "neutral": true
+          }
+        },
+        "dangerous_advice_flag": {
+          "score": 1.0,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "rules_triggered": []
+          }
+        },
+        "technical_correctness_check": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        },
+        "length_ratio": {
+          "score": 2.6919,
+          "status": "ok",
+          "details": {
+            "flagged": false,
+            "ratio": 2.691919191919192
+          }
+        },
+        "procedure_step_score": {
+          "score": null,
+          "status": "skipped",
+          "details": {}
+        }
+      },
+      "judge": {
+        "overall": 5,
+        "groundedness": 5,
+        "safety": 5,
+        "procedure": 5,
+        "context_use": 5,
+        "provider": "openai",
+        "status": "ok",
+        "reasoning": "The response accurately reflects the necessary steps for building a ground truth dataset, addressing all relevant challenges mentioned in the context. It correctly emphasizes the importance of retrospective labeling, resolving analyst disagreement, and accounting for class imbalance, while also including edge cases. All claims are factually correct and aligned with the reference answer.",
+        "flags": []
+      },
+      "composite": {
+        "score": 0.8718,
+        "status": "partial"
+      },
+      "critical_failure": false
+    }
+  ]
+}
