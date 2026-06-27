@@ -255,7 +255,7 @@ uv run python -m eval_pipeline --calibrate
 uv run jupyter notebook eval_pipeline.ipynb
 ```
 
-Run all cells top-to-bottom. By default the notebook loads existing `output/results.json` (no API cost). Set `RE_RUN_PIPELINE = True` in the setup cell to re-run the pipeline.
+Run all cells top-to-bottom. **Part 2 runs the full pipeline including LLM judge calls** (requires `.env` with API keys). Set `SKIP_JUDGE = True` in the notebook setup cell only for a deterministic-only dry run.
 
 ---
 
